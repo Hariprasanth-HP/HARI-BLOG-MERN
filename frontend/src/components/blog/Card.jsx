@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./blog.css";
 import { blog } from "../../assets/data/data";
 import {
@@ -12,13 +12,13 @@ import { Link } from "react-router-dom";
 export const Card = ({ posts }) => {
   // create file garnebelema
   const PublicFlo = "http://localhost:5000/images/";
+
   return (
     <>
       <section className="blog">
         <div className="container grid3">
           {posts.map((item) => (
             <div className="box boxItems" key={item.id}>
-              {/* first ma yo  <div className='img'>{item.photo && <img src={item.cover} alt='' />}</div>*/}
               <div className="img">
                 {item.photo && <img src={PublicFlo + item.photo} alt="" />}
               </div>
